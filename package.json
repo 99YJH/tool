@@ -76,6 +76,15 @@
       ],
       "icon": "public/icons/icon.icns",
       "category": "public.app-category.productivity"
+    },
+    "publish": {
+      "provider": "github",
+      "owner": "99YJH",
+      "repo": "tool"
     }
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/99YJH/tool.git"
   }
 }
