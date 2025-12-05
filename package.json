@@ -1,0 +1,81 @@
+{
+  "name": "multi-tool-office-toolkit",
+  "version": "0.1.0",
+  "description": "다기능 오피스 툴킷",
+  "main": "dist/electron/main.js",
+  "scripts": {
+    "dev": "concurrently \"next dev\" \"wait-on http://localhost:3000 && cross-env NODE_ENV=development electron .\"",
+    "build": "next build && tsc -p electron/tsconfig.json",
+    "build:win": "pnpm run build && electron-builder --win --x64",
+    "build:mac": "pnpm run build && electron-builder --mac --x64 --arm64",
+    "build:all": "pnpm run build && electron-builder --win --mac",
+    "start": "electron .",
+    "lint": "next lint"
+  },
+  "keywords": [
+    "electron",
+    "next.js",
+    "office",
+    "toolkit"
+  ],
+  "author": "",
+  "license": "MIT",
+  "devDependencies": {
+    "@types/node": "^20.10.0",
+    "@types/react": "^18.2.45",
+    "@types/react-dom": "^18.2.18",
+    "autoprefixer": "^10.4.16",
+    "concurrently": "^8.2.2",
+    "cross-env": "^7.0.3",
+    "electron": "^28.0.0",
+    "electron-builder": "^24.9.1",
+    "postcss": "^8.4.32",
+    "tailwindcss": "^3.4.0",
+    "typescript": "^5.3.3",
+    "wait-on": "^7.2.0"
+  },
+  "dependencies": {
+    "@radix-ui/react-dialog": "^1.1.15",
+    "@radix-ui/react-select": "^2.2.6",
+    "@radix-ui/react-separator": "^1.1.8",
+    "@radix-ui/react-slot": "^1.2.4",
+    "class-variance-authority": "^0.7.0",
+    "clsx": "^2.0.0",
+    "electron-store": "^8.1.0",
+    "electron-updater": "^6.1.7",
+    "exceljs": "^4.4.0",
+    "lucide-react": "^0.300.0",
+    "next": "^14.0.4",
+    "next-themes": "^0.2.1",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "tailwind-merge": "^2.2.0",
+    "tailwindcss-animate": "^1.0.7"
+  },
+  "build": {
+    "appId": "com.yourdomain.toolkit",
+    "productName": "OfficeTool",
+    "files": [
+      "out/**/*",
+      "dist/**/*",
+      "package.json"
+    ],
+    "directories": {
+      "output": "release"
+    },
+    "win": {
+      "target": [
+        "nsis"
+      ],
+      "icon": "public/icons/icon.ico"
+    },
+    "mac": {
+      "target": [
+        "dmg",
+        "zip"
+      ],
+      "icon": "public/icons/icon.icns",
+      "category": "public.app-category.productivity"
+    }
+  }
+}
