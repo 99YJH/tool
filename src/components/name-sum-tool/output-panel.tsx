@@ -41,7 +41,7 @@ export function OutputPanel({ results }: OutputPanelProps) {
     <div className="h-full flex flex-col p-4">
       <div className="flex items-center justify-between mb-3">
         <h2 className="text-lg font-semibold">
-          출력 ({results.length}개)
+          출력
         </h2>
         <div className="flex gap-2">
           <Button
@@ -77,23 +77,15 @@ export function OutputPanel({ results }: OutputPanelProps) {
             </TableRow>
           </TableHeader>
           <TableBody>
-            {results.length === 0 ? (
-              <TableRow>
-                <TableCell colSpan={3} className="text-center text-muted-foreground h-32">
-                  입력된 데이터가 없습니다.
+            {results.map((item) => (
+              <TableRow key={`${item.rank}-${item.name}`}>
+                <TableCell className="font-medium">{item.rank}</TableCell>
+                <TableCell>{item.name}</TableCell>
+                <TableCell className="text-right font-mono">
+                  {formatNumber(item.sum)}
                 </TableCell>
               </TableRow>
-            ) : (
-              results.map((item) => (
-                <TableRow key={`${item.rank}-${item.name}`}>
-                  <TableCell className="font-medium">{item.rank}</TableCell>
-                  <TableCell>{item.name}</TableCell>
-                  <TableCell className="text-right font-mono">
-                    {formatNumber(item.sum)}
-                  </TableCell>
-                </TableRow>
-              ))
-            )}
+            ))}
           </TableBody>
         </Table>
       </div>

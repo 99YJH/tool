@@ -15,16 +15,15 @@ interface MenuItem {
 const menuItems: MenuItem[] = [
   {
     id: 'name-sum',
-    label: '이름-숫자 합산',
+    label: '숫자 계산',
     icon: Calculator,
     path: '/',
   },
   {
-    id: 'placeholder-1',
-    label: '툴 2 (예정)',
+    id: 'web',
+    label: 'Web',
     icon: FileText,
-    path: '/tool2',
-    disabled: true,
+    path: '/web',
   },
   {
     id: 'placeholder-2',
@@ -48,7 +47,7 @@ export function Sidebar() {
   return (
     <div className="w-64 h-full bg-secondary/30 border-r border-border flex flex-col">
       <div className="h-16 flex items-center justify-center border-b border-border">
-        <h1 className="text-lg font-bold">Office Toolkit</h1>
+        <h1 className="text-lg font-bold">Tools</h1>
       </div>
 
       <nav className="flex-1 p-3 space-y-1 overflow-y-auto">

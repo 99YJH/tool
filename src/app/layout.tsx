@@ -8,7 +8,7 @@ import { UpdateDialog } from '@/components/update-dialog'
 const inter = Inter({ subsets: ['latin'] })
 
 export const metadata: Metadata = {
-  title: '다기능 오피스 툴킷',
+  title: 'Tools',
   description: '업무 효율을 높이는 다양한 툴 모음',
 }
 

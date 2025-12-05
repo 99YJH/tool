@@ -29,13 +29,8 @@ export function InputPanel({ value, onChange, onClear }: InputPanelProps) {
       <Textarea
         value={value}
         onChange={(e) => onChange(e.target.value)}
-        placeholder="이름 [공백] 숫자 형식으로 입력하세요.&#10;예:&#10;홍길동 1000&#10;김철수 2000&#10;홍길동 500"
         className="flex-1 resize-none font-mono"
       />
-
-      <p className="text-xs text-muted-foreground mt-2">
-        형식: 이름 [공백] 숫자 (줄바꿈으로 구분)
-      </p>
     </div>
   )
 }
